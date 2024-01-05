@@ -3,7 +3,7 @@
 .body-signup{
   margin: 0;
   height: 100vh;
-  background: linear-gradient(to bottom right, blue, green); /* Blue-green gradient background */
+  background: linear-gradient(to bottom right, red, orange 70%, orange); /* Blue-green gradient background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@
 
 .signup-container {
   position: relative;
-  border: 2px solid green;
+  border: 2px solid orange;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
@@ -33,7 +33,7 @@
 
 .signup-button {
   padding: 10px 20px;
-  background-color: green; /* Green button */
+  background-color: orange; /* Green button */
   color: white;
   border: none;
   border-radius: 5px;
@@ -42,7 +42,7 @@
 }
 
 .signup-button:hover {
-  background-color: #0a6f0d; /* Darker shade of green on hover */
+  background-color: #7b4b06; /* Darker shade of green on hover */
 }
 
 .login-link {
@@ -54,8 +54,8 @@
   margin-bottom: 0;
 }
 
-.login-link button {
-  color: blue; /* Color for the Log in button */
+.login-link a {
+  color: red; /* Color for the Log in button */
   text-decoration: underline;
   border: none;
   background: none;

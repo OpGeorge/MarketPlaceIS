@@ -1,7 +1,41 @@
 .body-Home {
-    background: linear-gradient(to bottom right, black 0%, black 40%, red 100%);
+    background: linear-gradient(to bottom right, black 0%, black 40%, white 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-   
+
+.home {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Items will be stacked vertically */
+  align-items: center;
+}
+
+.homeOriginal{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: red;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.item-container {
+  margin-top: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* or space-between */
+  align-items: flex-start; /* Adjust as needed */
+}
  
  
 .swatch {

@@ -1,8 +1,8 @@
 /* Login.css */
-body {
+.body-login {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(to bottom right, red, blue);
+  background: linear-gradient(to bottom right, white 0%,white 20%, red 90%, red);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@ body {
 
 .login-container {
   position: relative;
-  border: 2px solid purple;
+  border: 2px solid red;
   padding: 20px;
   background-color: white; /* Set background color for the form */
   border-radius: 10px; /* Add border radius for rounded corners */
@@ -32,7 +32,7 @@ body {
 
 .login-button {
   padding: 10px 20px;
-  background-color: purple;
+  background-color: red;
   color: white;
   border: none;
   border-radius: 5px;
@@ -41,7 +41,7 @@ body {
 }
 
 .login-button:hover {
-  background-color: #6a0dad; /* Darker shade of purple on hover */
+  background-color: #54040c; /* Darker shade of purple on hover */
 }
 
 .signup-link {
@@ -54,7 +54,7 @@ body {
 }
 
 .signup-link a {
-  color: purple; /* Example color for the link */
+  color: orange; /* Example color for the link */
   text-decoration: none; /* Remove underline from the link */
   font-weight: bold; /* Make the link text bold */
 }

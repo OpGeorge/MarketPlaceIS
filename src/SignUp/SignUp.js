@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SignUp.css';
 import axios from 'axios';
 
 
-function SignUp({ onSignUp }) {
+function SignUp() {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -11,34 +11,18 @@ function SignUp({ onSignUp }) {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-
-    try {
-      const response = await axios.post('http://localhost:8080/users/signup', {
-        email,
-        firstName,
-        lastName,
-        password,
-      });
-
-      const authToken = response.data.token;
-      console.log('Sign Up successful! Token:', authToken);
-
-      // Handle the token as needed (e.g., save to state, local storage)
-    } catch (error) {
-      console.error('Sign Up failed:', error.message);
-      // Handle Sign Up failure
-    }
+    console.log(email,firstName,lastName,password);
+        try {
+            const response = await axios.post('http://localhost:8080/users',{
+            email:email,firstName:firstName,lastName:lastName,password:password,
+            });
+            const authToken = response.data.authToken;
+            console.log('SignIn succesful ', authToken);
+        } catch (error) {
+            console.error('SignIn failed: ' , error);
+        }
   };
 
-  const handleSignUpClick = () => {
-    // Perform sign-up actions...
-    onSignUp(); // Call the onSignUp function passed from another component
-  };
-
-  const handleBackClick = () => {
-    // Perform actions when the back button is clicked
-    handleSignUpClick(); // This is an example; adjust it as needed
-  };
 
 
 
@@ -56,51 +40,56 @@ function SignUp({ onSignUp }) {
 
   return (
     <div >
-    <div className="signup-container">
-        {/* Back button */}
-        <button className="back-signup" onClick={handleBackClick}>
-        &lt;
-      </button>
-      <form className="signup-form" onSubmit={handleSignUp}>
-        <h2>Sign Up</h2>
+      <div className="signup-container">
 
-        <input
-          type="text"
-          placeholder="Email"
-          className="input-field"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="First Name"
-          className="input-field"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          className="input-field"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="input-field"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button className="signup-button" type="submit">
-          Sign Up
-        </button>
-        <div className="login-link">
-          <p>Already a user? <button onClick={handleSignUpClick}>Log in</button></p>
-        </div>
-      </form>
+        <form className="signup-form" onSubmit={handleSignUp}>
+          <h2>Sign Up</h2>
+
+          <label htmlFor="email"> </label>
+          <input
+            type="text"
+            id="email"
+            placeholder="Email"
+            className="input-field"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <label htmlFor="firstName"> </label>
+          <input
+            type="text"
+            placeholder="First Name"
+            className="input-field"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+
+          <label htmlFor="lastName"> </label>
+          <input
+            type="text"
+            placeholder="Last Name"
+            className="input-field"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+
+          <label htmlFor="password"> </label>
+          <input
+            type="password"
+            placeholder="Password"
+            className="input-field"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="signup-button" type="submit">
+            Sign Up
+          </button>
+          <div className="login-link">
+            <p>Already a user? <a href="/login">Just Log in</a></p>
+          </div>
+        </form>
       </div>
-      </div>
+    </div>
   );
 }
 
